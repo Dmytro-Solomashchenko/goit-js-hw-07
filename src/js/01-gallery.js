@@ -38,8 +38,9 @@ function onImagePaletteContainerClick(evt) {
   instance.show();
 
   //   instance.show(() => console.log('lightbox now visible'));
-  document.addEventListener('keydown', logKey);
-
+  if (basicLightbox.visible) {
+    document.addEventListener('keydown', logKey);
+  }
   function logKey(e) {
     if (e.code === 'Escape') {
       instance.close();
